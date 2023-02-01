@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -28,7 +29,7 @@ public class Post implements Serializable {
     private Date postedAt = new Date();
     @NotNull
     @Temporal(TemporalType.DATE)
-    @Column(name = "posted_at")
+    @Column(name = "updated_at")
     private Date updatedAt = new Date();
     @OneToMany(mappedBy = "postId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Comment> comments;
